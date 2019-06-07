@@ -1474,6 +1474,128 @@
       ],
       "web_url": "https://nipype.readthedocs.io/en/latest/interfaces/generated/interfaces.fsl/preprocess.html#flirt",
       "colour": "#fe3948"
+    },
+    {
+      "name": "io_SelectFiles",
+      "class": "io.SelectFiles",
+      "category": [
+        "io"
+      ],
+      "ports": [
+        {
+          "base": "base_directory",
+          "editable": true,
+          "id": "37bddce1-a1da-416d-9a5a-6d70f74f321f",
+          "input": true,
+          "inputPort": "33b4967b-7e09-40f0-80a5-80d3449a7575",
+          "name": "base_directory",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "raise_on_empty",
+          "editable": true,
+          "id": "0985b23c-9d78-4953-afd6-ebbddd003d38",
+          "input": true,
+          "inputPort": "4a157635-fa85-4d62-a5f0-1fd69a923b28",
+          "name": "raise_on_empty",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "acqp",
+          "editable": true,
+          "id": "0a6e7fe5-6123-4dd7-a220-c7875a557e1b",
+          "input": true,
+          "inputPort": "1cf6f0f5-1c98-4590-905c-3d686fc3f508",
+          "name": "acqp",
+          "output": true,
+          "outputPort": "53098527-bf24-4fd1-aac8-37f6466454fb",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "bval",
+          "editable": true,
+          "id": "200ae35f-417b-4224-b5e5-0e52c7bc65ca",
+          "input": true,
+          "inputPort": "4cfd2044-e718-46b8-9d3c-144ac98f5dc6",
+          "name": "bval",
+          "output": true,
+          "outputPort": "10e5f688-2751-4f84-a4fb-fcf1aac88b13",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "bvec",
+          "editable": true,
+          "id": "8dc6b01c-cbea-46af-93bd-8b41774382a3",
+          "input": true,
+          "inputPort": "e044351d-c378-4cba-8a9c-dd03949d06a4",
+          "name": "bvec",
+          "output": true,
+          "outputPort": "e6cd8b8e-8f2d-46de-87b6-d9b02c3ebe84",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "mask",
+          "editable": true,
+          "id": "c1a5f4ed-355d-441f-970d-422353c4f110",
+          "input": true,
+          "inputPort": "fdeae33e-7e5e-46b0-b8a8-b9f2f706995a",
+          "name": "mask",
+          "output": true,
+          "outputPort": "061b49b7-8e4b-49f4-8f19-2bdf2904ee9b",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "T1",
+          "editable": true,
+          "id": "ba6a2677-cb2b-4b5d-9d63-7bcd137eccf7",
+          "input": true,
+          "inputPort": "c0e53007-ee89-424e-bae9-2dacd334b26d",
+          "name": "T1",
+          "output": true,
+          "outputPort": "fa418a27-95f4-4e8c-ae58-fa1aedd80825",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        }
+      ],
+      "position": [
+        -237.12763518296714,
+        370.7616034332575
+      ],
+      "code": [
+        {
+          "language": "Nipype",
+          "comment": "Flexibly collect data from disk to feed into workflows.",
+          "argument": {
+            "name": "io.SelectFiles()",
+            "import": "import nipype.interfaces.io as io"
+          }
+        },
+        {
+          "language": "Docker",
+          "argument": {
+            "name": "io"
+          }
+        }
+      ],
+      "web_url": "https://nipype.readthedocs.io/en/latest/interfaces/generated/nipype.interfaces.io.html#selectfiles",
+      "colour": "#fe334e"
     }
   ],
   "version": "v1"

@@ -7,6 +7,7 @@ import nipype.pipeline as pe
 
 import .dwi_preproc.custom_functions as custom_nodes
 import nipype.interfaces.fsl as fsl
+import nipype.interfaces.io as io
 
 #Wraps dwidenoise function.
 dwidenoise = pe.Node(interface = custom_nodes.dwidenoise(), name='dwidenoise')
@@ -22,6 +23,9 @@ fsl_Eddy = pe.Node(interface = fsl.Eddy(), name='fsl_Eddy')
 
 #Wraps the executable command ``flirt``.
 fsl_FLIRT = pe.Node(interface = fsl.FLIRT(), name='fsl_FLIRT')
+
+#Flexibly collect data from disk to feed into workflows.
+io_SelectFiles = pe.Node(io.SelectFiles(templates={}), name='io_SelectFiles')
 
 #Create a workflow to connect all those nodes
 analysisflow = nipype.Workflow('MyWorkflow')
