@@ -1,5 +1,1480 @@
 {
-  "links": [],
-  "nodes": [],
+  "links": [
+    {
+      "from": "7e5efc45-940c-4eb0-9059-87f0d453bb98",
+      "to": "95812982-5a43-4573-bc67-873058263416"
+    },
+    {
+      "from": "631aaa99-29e4-49bc-ab84-799cb56279d0",
+      "to": "99595b29-e5cc-444c-8faf-e802fa815ff3"
+    },
+    {
+      "from": "4015216e-3670-4ed7-a885-59ae053dcfad",
+      "to": "3faa7c6f-0c38-4f93-8067-f8dba8d706ff"
+    },
+    {
+      "from": "90469869-1666-402d-a967-2f0b3b7ff9cb",
+      "to": "57647eec-3494-4cf1-845c-40befb0cf44f"
+    }
+  ],
+  "nodes": [
+    {
+      "name": "dwidenoise",
+      "class": "dwidenoise",
+      "category": [
+        "Nipype"
+      ],
+      "ports": [
+        {
+          "base": "in_file",
+          "editable": true,
+          "id": "9541b916-7423-44d2-84e1-85198ba7a2d6",
+          "input": true,
+          "inputPort": "e137c7a3-6489-46f6-9d5b-4dd8fb0a5719",
+          "name": "in_file",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "out_file",
+          "editable": true,
+          "id": "98c4008b-0a2a-4055-8de2-5c14b3fa5071",
+          "input": false,
+          "inputPort": false,
+          "name": "out_file",
+          "output": true,
+          "outputPort": "7e5efc45-940c-4eb0-9059-87f0d453bb98",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        }
+      ],
+      "position": [
+        79.1875,
+        158.5625
+      ],
+      "code": [
+        {
+          "language": "Nipype",
+          "comment": "Wraps dwidenoise function.",
+          "argument": {
+            "name": "custom_nodes.dwidenoise()",
+            "import": "import .dwi_preproc.custom_functions as custom_nodes"
+          }
+        },
+        {
+          "language": "Docker",
+          "argument": {
+            "snippet": "https://raw.githubusercontent.com/DimuthuHemachandra/dwi_preproc/master/docker/snippet.txt"
+          }
+        }
+      ],
+      "web_url": "",
+      "colour": "#BBB"
+    },
+    {
+      "name": "unring",
+      "class": "unring",
+      "category": [
+        "Nipype"
+      ],
+      "ports": [
+        {
+          "base": "in_file",
+          "editable": true,
+          "id": "80b21527-95b4-45b3-b787-f25c9f04f8a3",
+          "input": true,
+          "inputPort": "95812982-5a43-4573-bc67-873058263416",
+          "name": "in_file",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "out_file",
+          "editable": true,
+          "id": "083fe628-99a5-4561-b701-2a1459f0b78c",
+          "input": false,
+          "inputPort": false,
+          "name": "out_file",
+          "output": true,
+          "outputPort": "4015216e-3670-4ed7-a885-59ae053dcfad",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        }
+      ],
+      "position": [
+        290.1875,
+        229.5625
+      ],
+      "code": [
+        {
+          "language": "Nipype",
+          "comment": "Wraps unring function.",
+          "argument": {
+            "name": "custom_nodes.Unring()",
+            "import": "import .dwi_preproc.custom_functions as custom_nodes"
+          }
+        },
+        {
+          "language": "Docker",
+          "argument": {
+            "snippet": "https://raw.githubusercontent.com/DimuthuHemachandra/dwi_preproc/master/docker/snippet.txt"
+          }
+        }
+      ],
+      "web_url": "",
+      "colour": "#BBB"
+    },
+    {
+      "name": "fslval",
+      "class": "fslval",
+      "category": [
+        "Nipype"
+      ],
+      "ports": [
+        {
+          "base": "in_file",
+          "editable": true,
+          "id": "b3b81c35-7294-4aab-994a-916bc18b8c26",
+          "input": true,
+          "inputPort": "b2602863-d784-4939-a436-e3552f5afc73",
+          "name": "in_file",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "out_file",
+          "editable": true,
+          "id": "5875ef5b-b3b5-42eb-99cc-e3919cbf5e8a",
+          "input": false,
+          "inputPort": false,
+          "name": "out_file",
+          "output": true,
+          "outputPort": "631aaa99-29e4-49bc-ab84-799cb56279d0",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        }
+      ],
+      "position": [
+        271.1875,
+        426.5625
+      ],
+      "code": [
+        {
+          "language": "Nipype",
+          "comment": "Wraps fslval function.",
+          "argument": {
+            "name": "custom_nodes.fslval()",
+            "import": "import .dwi_preproc.custom_functions as custom_nodes"
+          }
+        },
+        {
+          "language": "Docker",
+          "argument": {
+            "snippet": "https://raw.githubusercontent.com/DimuthuHemachandra/dwi_preproc/master/docker/snippet.txt"
+          }
+        }
+      ],
+      "web_url": "",
+      "colour": "#BBB"
+    },
+    {
+      "name": "fsl_Eddy",
+      "class": "fsl.Eddy",
+      "category": [
+        "fsl",
+        "epi"
+      ],
+      "ports": [
+        {
+          "base": "in_file",
+          "editable": true,
+          "id": "9e044fd7-1f90-46d4-809f-69d6154f0588",
+          "input": true,
+          "inputPort": "3faa7c6f-0c38-4f93-8067-f8dba8d706ff",
+          "name": "in_file",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "in_mask",
+          "editable": true,
+          "id": "d5b3bb73-95c0-4873-91d0-ad367670d86e",
+          "input": true,
+          "inputPort": "a3ba467c-fd14-4faf-b990-43fa2c32ee63",
+          "name": "in_mask",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "in_index",
+          "editable": true,
+          "id": "8cb134ac-6124-49bd-b33c-f945ffd87da8",
+          "input": true,
+          "inputPort": "99595b29-e5cc-444c-8faf-e802fa815ff3",
+          "name": "in_index",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "in_acqp",
+          "editable": true,
+          "id": "42f725f6-5232-4927-9dd5-dff0320b2b88",
+          "input": true,
+          "inputPort": "5f1a8ba5-2693-400d-be8c-a216e6f8009f",
+          "name": "in_acqp",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "in_bvec",
+          "editable": true,
+          "id": "dffd5c6d-977d-4e48-8e1a-2ce4341d908f",
+          "input": true,
+          "inputPort": "61f22b8f-e88a-4bb5-ac58-ed2581b2e9fd",
+          "name": "in_bvec",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "in_bval",
+          "editable": true,
+          "id": "49dcc9d3-5c20-49f9-8a07-622a50631b29",
+          "input": true,
+          "inputPort": "a63782dd-bd66-4367-9745-20ec1d7ab143",
+          "name": "in_bval",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "out_base",
+          "editable": true,
+          "id": "edd22d5b-b602-4ea2-b148-f292081d89dd",
+          "input": true,
+          "inputPort": "837c941f-2ac6-499b-9376-31ced7621422",
+          "name": "out_base",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "session",
+          "editable": true,
+          "id": "1dd7ab1a-77fa-4517-8847-ec9317acf356",
+          "input": true,
+          "inputPort": "28abedaf-f4bb-4404-a3c0-02481e55f5e2",
+          "name": "session",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "in_topup_fieldcoef",
+          "editable": true,
+          "id": "7bccc4ba-a4d0-41f3-8c8c-615c93cd9239",
+          "input": true,
+          "inputPort": "41a2b8c0-9711-41e7-bc7a-e5938b7ed4bc",
+          "name": "in_topup_fieldcoef",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "in_topup_movpar",
+          "editable": true,
+          "id": "6a8cc5b5-035a-4595-80dd-3e1a6d86cbb0",
+          "input": true,
+          "inputPort": "c261bd8c-d4ed-4019-acf0-a594e29bba6a",
+          "name": "in_topup_movpar",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "flm",
+          "editable": true,
+          "id": "c5506133-b4a5-4dbe-91b6-9f1011f94391",
+          "input": true,
+          "inputPort": "74bc0586-d80d-4948-a173-fe3342de8e5e",
+          "name": "flm",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "slm",
+          "editable": true,
+          "id": "e8ea3535-b202-4c4d-94e1-f3ed29943df8",
+          "input": true,
+          "inputPort": "5bde1dbc-e977-42df-b9af-75a2c25b9335",
+          "name": "slm",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "fep",
+          "editable": true,
+          "id": "3d706d73-6d08-4b9d-a1e9-5f2a617d9a46",
+          "input": true,
+          "inputPort": "090b2287-b1be-4ead-9911-2ebf5bb6a400",
+          "name": "fep",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "interp",
+          "editable": true,
+          "id": "b57fc80f-43e3-40de-8802-f7fbe5c634e1",
+          "input": true,
+          "inputPort": "d4c68d4e-c2c3-4a8c-81a7-eabbd828dcec",
+          "name": "interp",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "nvoxhp",
+          "editable": true,
+          "id": "457618aa-a6ff-4779-a5f7-86735f67fe23",
+          "input": true,
+          "inputPort": "9e764369-d5eb-44a0-9729-41207f5b355a",
+          "name": "nvoxhp",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "fudge_factor",
+          "editable": true,
+          "id": "63443de1-c4bb-48f9-8ce5-89d35e81ee60",
+          "input": true,
+          "inputPort": "d1807e1f-ecbc-45b5-a997-825b8ad3e133",
+          "name": "fudge_factor",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "dont_sep_offs_move",
+          "editable": true,
+          "id": "919453b0-99ff-4be8-a4b3-8b78e387ba53",
+          "input": true,
+          "inputPort": "7f8dcb18-0bda-48bc-ae06-889c981fe40c",
+          "name": "dont_sep_offs_move",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "dont_peas",
+          "editable": true,
+          "id": "fcbf0168-9ce0-4fe4-a468-3678dab0facc",
+          "input": true,
+          "inputPort": "84d7943d-81b8-439c-ad76-006c71ca9c42",
+          "name": "dont_peas",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "fwhm",
+          "editable": true,
+          "id": "7a07d041-18bd-4cb0-8584-d4f4f03b450f",
+          "input": true,
+          "inputPort": "9d51ffaf-27af-4987-a289-7ac8777ac06e",
+          "name": "fwhm",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "niter",
+          "editable": true,
+          "id": "cdb37a4b-978d-44f3-9c6e-8458e45d9ba5",
+          "input": true,
+          "inputPort": "08a80183-2ce7-4a4e-ae10-cfa5139fe1ba",
+          "name": "niter",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "method",
+          "editable": true,
+          "id": "e6c9bb24-d345-473d-934e-6656e3a23190",
+          "input": true,
+          "inputPort": "46565cc8-a4dc-4abc-a5f5-6cd111f18992",
+          "name": "method",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "repol",
+          "editable": true,
+          "id": "6cd7f277-62bf-4c8f-a458-fc81fe229e4c",
+          "input": true,
+          "inputPort": "a7233063-c124-4e0a-b86a-01743461cbc7",
+          "name": "repol",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "num_threads",
+          "editable": true,
+          "id": "01d4e17c-d73a-443a-a5b6-2f1c02438688",
+          "input": true,
+          "inputPort": "3a823b12-5c05-4af0-b267-8ffd33b40e73",
+          "name": "num_threads",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "is_shelled",
+          "editable": true,
+          "id": "8781a1ee-6e5e-4b41-94e5-b51070b81154",
+          "input": true,
+          "inputPort": "b549cc69-f713-4423-9987-7373d0f3d19e",
+          "name": "is_shelled",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "field",
+          "editable": true,
+          "id": "21d146a2-7d4c-41f2-9f47-bdee6e68fe67",
+          "input": true,
+          "inputPort": "cc267676-1d8a-427a-a48b-c85ddb9b2d3c",
+          "name": "field",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "field_mat",
+          "editable": true,
+          "id": "76a07d0f-6acc-484e-a560-a224094f8f47",
+          "input": true,
+          "inputPort": "ca6b2b81-d376-4f0e-b200-66f680c62185",
+          "name": "field_mat",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "use_cuda",
+          "editable": true,
+          "id": "269c91f7-f8ac-48da-b17d-bd682db8470e",
+          "input": true,
+          "inputPort": "8fa502f2-0bcd-4fae-84ea-4a4feae72e27",
+          "name": "use_cuda",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "cnr_maps",
+          "editable": true,
+          "id": "9e210d2d-3641-4fd9-a299-1cdb30d66266",
+          "input": true,
+          "inputPort": "8d94b1c1-d2b3-42e6-af8a-00b5f2de1360",
+          "name": "cnr_maps",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "residuals",
+          "editable": true,
+          "id": "5df8c7dc-18aa-474d-aec8-bb58265d5c79",
+          "input": true,
+          "inputPort": "080848e3-9d25-44fd-9c8d-4a8bc96e0e3c",
+          "name": "residuals",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "output_type",
+          "editable": true,
+          "id": "348d8866-d473-4a94-8f83-c70a6dacb831",
+          "input": true,
+          "inputPort": "6ab21918-810f-4f23-96c8-e4e55e3a296d",
+          "name": "output_type",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "args",
+          "editable": true,
+          "id": "679b1f54-62f6-4132-845d-a00cec4f36f1",
+          "input": true,
+          "inputPort": "83b63884-e90e-4fab-8614-0b4986620f22",
+          "name": "args",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "environ",
+          "editable": true,
+          "id": "e925772e-d0b3-4af8-b151-4007730eae3e",
+          "input": true,
+          "inputPort": "4615dfa0-1301-4641-84e2-348a9d42355b",
+          "name": "environ",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "out_corrected",
+          "editable": false,
+          "id": "93f400fc-1e70-4164-bd18-5d865b6912f2",
+          "input": false,
+          "inputPort": false,
+          "name": "out_corrected",
+          "output": true,
+          "outputPort": "90469869-1666-402d-a967-2f0b3b7ff9cb",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "out_parameter",
+          "editable": false,
+          "id": "eb13a75e-1e96-422b-abb7-3274fc13509a",
+          "input": false,
+          "inputPort": false,
+          "name": "out_parameter",
+          "output": true,
+          "outputPort": "6db55118-187e-4b54-a5f7-85299f906a35",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "out_rotated_bvecs",
+          "editable": false,
+          "id": "1f76e9ee-1be0-4f08-b863-f965d9d2c9c0",
+          "input": false,
+          "inputPort": false,
+          "name": "out_rotated_bvecs",
+          "output": true,
+          "outputPort": "dcdb64a0-88f9-4d94-934d-c3e4b7a176f8",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "out_movement_rms",
+          "editable": false,
+          "id": "e283e70f-d5bf-413f-9367-7c9977e6db4c",
+          "input": false,
+          "inputPort": false,
+          "name": "out_movement_rms",
+          "output": true,
+          "outputPort": "57884316-506f-4d9d-ae64-740ad9b95630",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "out_restricted_movement_rms",
+          "editable": false,
+          "id": "86d8d52b-ebc0-4042-b895-c535164b434d",
+          "input": false,
+          "inputPort": false,
+          "name": "out_restricted_movement_rms",
+          "output": true,
+          "outputPort": "a0ce1905-3e9d-494f-b607-8e121c5ca272",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "out_shell_alignment_parameters",
+          "editable": false,
+          "id": "376cffb9-1318-4ea1-ac8f-3c873a9b47a3",
+          "input": false,
+          "inputPort": false,
+          "name": "out_shell_alignment_parameters",
+          "output": true,
+          "outputPort": "d6842f60-a0bd-42d6-887c-c39f253fb457",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "out_outlier_report",
+          "editable": false,
+          "id": "d9b429ce-5412-48a7-80aa-e874396fe43d",
+          "input": false,
+          "inputPort": false,
+          "name": "out_outlier_report",
+          "output": true,
+          "outputPort": "22121955-4e9b-4768-828f-4dda5330b19e",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "out_cnr_maps",
+          "editable": false,
+          "id": "278b2579-d986-4e50-85cb-85958eb51071",
+          "input": false,
+          "inputPort": false,
+          "name": "out_cnr_maps",
+          "output": true,
+          "outputPort": "a71c6ee5-786b-450b-92b5-9a978316f1e9",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "out_residuals",
+          "editable": false,
+          "id": "fc736900-193b-42f6-a16e-c8d70c25f1ac",
+          "input": false,
+          "inputPort": false,
+          "name": "out_residuals",
+          "output": true,
+          "outputPort": "7d048f5e-bde7-4d90-98dd-e405c3368103",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        }
+      ],
+      "position": [
+        481.1875,
+        203.96875
+      ],
+      "code": [
+        {
+          "language": "Nipype",
+          "comment": "Wraps the executable command ``eddy_openmp``.",
+          "argument": {
+            "name": "fsl.Eddy()",
+            "import": "import nipype.interfaces.fsl as fsl"
+          }
+        },
+        {
+          "language": "Docker",
+          "argument": {
+            "name": "fsl"
+          }
+        }
+      ],
+      "web_url": "https://nipype.readthedocs.io/en/latest/interfaces/generated/interfaces.fsl/epi.html#eddy",
+      "colour": "#fe4839"
+    },
+    {
+      "name": "fsl_FLIRT",
+      "class": "fsl.FLIRT",
+      "category": [
+        "fsl",
+        "preprocess"
+      ],
+      "ports": [
+        {
+          "base": "in_file",
+          "editable": true,
+          "id": "2482d9f7-c08f-448f-bd52-ab0747251437",
+          "input": true,
+          "inputPort": "57647eec-3494-4cf1-845c-40befb0cf44f",
+          "name": "in_file",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "reference",
+          "editable": true,
+          "id": "f49ae992-793f-403d-b1e5-155f0bcda02b",
+          "input": true,
+          "inputPort": "91e0e0cc-3fd8-4ef0-929d-a7ff3e876a70",
+          "name": "reference",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "out_file",
+          "editable": true,
+          "id": "e4b21473-ef8d-4f90-bd8a-0533638604cc",
+          "input": true,
+          "inputPort": "0d4b7672-e83a-4bad-93ac-71aa3202ab19",
+          "name": "out_file",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "out_matrix_file",
+          "editable": true,
+          "id": "a1e782c8-7584-462b-9286-06222ffa67d5",
+          "input": true,
+          "inputPort": "2f5b1d5d-9744-43f3-b8b5-e3628627df69",
+          "name": "out_matrix_file",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "out_log",
+          "editable": true,
+          "id": "9041af75-70ba-4fe4-8fb4-f89c536732ad",
+          "input": true,
+          "inputPort": "c17622be-17bb-47eb-82ed-ab331c019247",
+          "name": "out_log",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "in_matrix_file",
+          "editable": true,
+          "id": "f9f39582-7378-412f-b037-22dd9af3dd5a",
+          "input": true,
+          "inputPort": "78c64e37-39dc-43f1-a03c-cda10c46dec1",
+          "name": "in_matrix_file",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "apply_xfm",
+          "editable": true,
+          "id": "0985ca69-506e-4831-b3cb-081633625395",
+          "input": true,
+          "inputPort": "e08edd54-e329-425a-a49f-eb6d86351b99",
+          "name": "apply_xfm",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "apply_isoxfm",
+          "editable": true,
+          "id": "fc3ac07c-019f-4293-bf96-4a6f594147f3",
+          "input": true,
+          "inputPort": "16f7b3a8-2345-4a07-b25b-ad9423eca88f",
+          "name": "apply_isoxfm",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "datatype",
+          "editable": true,
+          "id": "91f2faa9-2dfc-4d58-9090-7fdf09938240",
+          "input": true,
+          "inputPort": "19041225-34d4-43dd-bc9d-0afb8a3b584d",
+          "name": "datatype",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "cost",
+          "editable": true,
+          "id": "1838ab4d-29fa-45c6-aafc-eb69c162adec",
+          "input": true,
+          "inputPort": "ef90d7c4-14c0-4fd4-8e1e-2b58341af263",
+          "name": "cost",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "cost_func",
+          "editable": true,
+          "id": "b47a2044-4757-4dff-bdec-8285c22928d2",
+          "input": true,
+          "inputPort": "3b32e2ec-538d-4ad8-b84c-8668ca094d0c",
+          "name": "cost_func",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "uses_qform",
+          "editable": true,
+          "id": "453b7ccb-7592-4ca4-a47a-48f363f75e88",
+          "input": true,
+          "inputPort": "e3d82319-0d75-4698-b2d5-95a2239e5472",
+          "name": "uses_qform",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "display_init",
+          "editable": true,
+          "id": "7b7a4145-4045-4354-a63a-62ca35ee1c40",
+          "input": true,
+          "inputPort": "671d47c2-4617-4a82-bffa-036129418f4a",
+          "name": "display_init",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "angle_rep",
+          "editable": true,
+          "id": "3bd08898-2c9c-4787-ac8e-a81930566f17",
+          "input": true,
+          "inputPort": "eeb35152-e1f3-4008-8b7b-e34a7f53d831",
+          "name": "angle_rep",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "interp",
+          "editable": true,
+          "id": "1327b0bb-7363-4de6-9081-7368dd467607",
+          "input": true,
+          "inputPort": "a2b6e544-7a75-4520-8de1-5817ecdb89d8",
+          "name": "interp",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "sinc_width",
+          "editable": true,
+          "id": "3aa2760f-86eb-4c39-980f-3e2fa7434dd0",
+          "input": true,
+          "inputPort": "accf801f-0337-44cf-9b67-fd47653ea192",
+          "name": "sinc_width",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "sinc_window",
+          "editable": true,
+          "id": "a57fb4b2-61a2-425e-891e-70b113f80ed8",
+          "input": true,
+          "inputPort": "3165d7ac-ae10-4ae3-b9df-e44bd0c4b8c0",
+          "name": "sinc_window",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "bins",
+          "editable": true,
+          "id": "9d7d1b6e-f854-4897-8c0f-c0437acf1b75",
+          "input": true,
+          "inputPort": "311890d6-64b8-45fa-80c0-a29da1572e73",
+          "name": "bins",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "dof",
+          "editable": true,
+          "id": "0f9a4406-1918-4377-8572-103323a8daa9",
+          "input": true,
+          "inputPort": "92b42a05-2415-4193-a91e-cc5fda371da9",
+          "name": "dof",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "no_resample",
+          "editable": true,
+          "id": "c5486111-7800-43ec-884d-44474f500eb9",
+          "input": true,
+          "inputPort": "8fabd5b8-6f80-4757-a817-8a0ce93be942",
+          "name": "no_resample",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "force_scaling",
+          "editable": true,
+          "id": "01024a6e-5c08-407c-8263-4a7e1683e029",
+          "input": true,
+          "inputPort": "ab085b7a-e0ae-4828-83d5-e7af3f59825e",
+          "name": "force_scaling",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "min_sampling",
+          "editable": true,
+          "id": "0e0a9587-3f87-4682-8d86-960c63c16b50",
+          "input": true,
+          "inputPort": "ab335002-0a17-4a93-90ab-3f51f4d6b6cb",
+          "name": "min_sampling",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "padding_size",
+          "editable": true,
+          "id": "5d5bbc18-4356-4f0c-b164-956b5ffdde55",
+          "input": true,
+          "inputPort": "66c8b082-e0e8-4fb3-bb14-3282b1cd4825",
+          "name": "padding_size",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "searchr_x",
+          "editable": true,
+          "id": "21923d00-6f44-45d8-a35f-42ea927e7f73",
+          "input": true,
+          "inputPort": "5b809b99-8ce2-4538-b2d6-93eb1802ec47",
+          "name": "searchr_x",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "searchr_y",
+          "editable": true,
+          "id": "41b86142-4a6c-4f92-95be-70799a985af0",
+          "input": true,
+          "inputPort": "9238b1ff-a006-4e62-a076-6e89dc7227b3",
+          "name": "searchr_y",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "searchr_z",
+          "editable": true,
+          "id": "9f6766e4-02c5-4589-af2b-13676a13200a",
+          "input": true,
+          "inputPort": "cb53acbb-dfcd-4209-9611-77a5a5473351",
+          "name": "searchr_z",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "no_search",
+          "editable": true,
+          "id": "24f2a19a-263e-47d6-bc35-5166c4392adf",
+          "input": true,
+          "inputPort": "fcdce420-4e66-458e-9da9-0370fb2d2691",
+          "name": "no_search",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "coarse_search",
+          "editable": true,
+          "id": "6565d74f-16b3-4667-958f-70b76077af4b",
+          "input": true,
+          "inputPort": "00a6b349-33eb-40b4-9e38-7fcff6bd668d",
+          "name": "coarse_search",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "fine_search",
+          "editable": true,
+          "id": "6e558200-3ad4-453b-98ef-b5042e888734",
+          "input": true,
+          "inputPort": "142982e6-1d7c-4f6f-8df3-2a7e9b12cfa7",
+          "name": "fine_search",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "schedule",
+          "editable": true,
+          "id": "79eb3946-3876-416d-92e4-e8d0f36d10d3",
+          "input": true,
+          "inputPort": "f2c28db6-627a-42e7-bc75-b3ce804ff935",
+          "name": "schedule",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "ref_weight",
+          "editable": true,
+          "id": "8cd97413-a5a6-47af-98d1-20f3f5ceada4",
+          "input": true,
+          "inputPort": "ea9b633a-3e44-4027-9648-f4e100feb36b",
+          "name": "ref_weight",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "in_weight",
+          "editable": true,
+          "id": "b4d2ab48-fd91-4958-9f8c-e264f9986ee8",
+          "input": true,
+          "inputPort": "dc6f3880-cb96-49e8-9e56-e67514130036",
+          "name": "in_weight",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "no_clamp",
+          "editable": true,
+          "id": "cfb37f63-02aa-4d70-b468-bbaad01c4d20",
+          "input": true,
+          "inputPort": "9ac76793-9370-417e-9659-c0d0ab6ad64d",
+          "name": "no_clamp",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "no_resample_blur",
+          "editable": true,
+          "id": "2e95f0c8-9f5d-4689-839c-1e9631687cec",
+          "input": true,
+          "inputPort": "50f49d67-5e98-4367-b1c2-e9e671a8a9b0",
+          "name": "no_resample_blur",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "rigid2D",
+          "editable": true,
+          "id": "65fb26e9-bd54-4f7b-953c-3c530c2d436a",
+          "input": true,
+          "inputPort": "63470aa4-9925-40c2-9190-cdc0e7e8944a",
+          "name": "rigid2D",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "save_log",
+          "editable": true,
+          "id": "ba793bc0-cf17-4699-862b-b598d277db83",
+          "input": true,
+          "inputPort": "24c1cd71-b892-4a70-929c-462ba5d29b16",
+          "name": "save_log",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "verbose",
+          "editable": true,
+          "id": "2f3c2b47-f5a9-47f8-a07e-a8532becd30a",
+          "input": true,
+          "inputPort": "40615f5c-bb96-4732-9df1-280d2887ec3c",
+          "name": "verbose",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "bgvalue",
+          "editable": true,
+          "id": "1a6eac8e-9fa1-40da-9218-2b8b418d1017",
+          "input": true,
+          "inputPort": "8a4626f2-f913-424e-ac44-8c4bca1501d7",
+          "name": "bgvalue",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "wm_seg",
+          "editable": true,
+          "id": "a09012bf-622c-4d86-866c-4b80d78f44ef",
+          "input": true,
+          "inputPort": "eea5ab67-df28-48fa-89e4-3847d4810e71",
+          "name": "wm_seg",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "wmcoords",
+          "editable": true,
+          "id": "32b6e84e-92a8-4f05-8210-a18a41666083",
+          "input": true,
+          "inputPort": "e27dd303-2655-4de5-9f3b-8537f37d457a",
+          "name": "wmcoords",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "wmnorms",
+          "editable": true,
+          "id": "f255b3c4-0370-44bb-96e0-d8828f55bc26",
+          "input": true,
+          "inputPort": "77d07ba6-21bf-48c2-af1b-351497c25f69",
+          "name": "wmnorms",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "fieldmap",
+          "editable": true,
+          "id": "3b481cb5-00c3-44ae-bff7-6aba3fcd0aeb",
+          "input": true,
+          "inputPort": "bc2412e3-4ea1-4416-a372-fcc0a24fddb7",
+          "name": "fieldmap",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "fieldmapmask",
+          "editable": true,
+          "id": "f9e0cc3c-3a08-43b9-9c58-401f62f15d07",
+          "input": true,
+          "inputPort": "3652b472-66cd-410c-a407-99fa02f021dc",
+          "name": "fieldmapmask",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "pedir",
+          "editable": true,
+          "id": "2b361d5e-8457-40b7-9e85-71acd0c2c8ff",
+          "input": true,
+          "inputPort": "b255519a-e239-486e-b3a4-9df28492bcce",
+          "name": "pedir",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "echospacing",
+          "editable": true,
+          "id": "3787325a-9a36-47b4-88c8-e0e61f7f5b6a",
+          "input": true,
+          "inputPort": "752ee10f-55fe-46da-ad8d-51c3015e9c0d",
+          "name": "echospacing",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "bbrtype",
+          "editable": true,
+          "id": "8dff652d-a4f6-4c94-8790-d3a45739c70d",
+          "input": true,
+          "inputPort": "3765c034-a525-4974-8846-a6c191029290",
+          "name": "bbrtype",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "bbrslope",
+          "editable": true,
+          "id": "e5899e6d-3a00-4941-a304-ba9f6b58b724",
+          "input": true,
+          "inputPort": "edaf6772-8533-411f-b6b1-4efaf561b9e3",
+          "name": "bbrslope",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "output_type",
+          "editable": true,
+          "id": "a6511e02-c2cc-47bc-a526-cfae1ef331ce",
+          "input": true,
+          "inputPort": "b320366d-1865-4eac-ab29-ac20813da14e",
+          "name": "output_type",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "args",
+          "editable": true,
+          "id": "2fa7cf04-655f-4e23-9e87-6c85d9e3436f",
+          "input": true,
+          "inputPort": "ef585861-5fb5-4575-9732-336c01be734d",
+          "name": "args",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "environ",
+          "editable": true,
+          "id": "bee30aff-8219-4b79-b6fd-8b1842bc0660",
+          "input": true,
+          "inputPort": "b33349c2-a390-4439-8241-284337b4bcbe",
+          "name": "environ",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "out_file",
+          "editable": false,
+          "id": "4823188c-9433-4750-9e94-571debcb61d7",
+          "input": false,
+          "inputPort": false,
+          "name": "out_file",
+          "output": true,
+          "outputPort": "84c99bc8-e027-445e-b870-080b843a97fc",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "out_matrix_file",
+          "editable": false,
+          "id": "a4b33329-14af-49b9-aeba-f5cc2230fffe",
+          "input": false,
+          "inputPort": false,
+          "name": "out_matrix_file",
+          "output": true,
+          "outputPort": "f03bd83b-67fc-4207-9c8b-46def50192a7",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "out_log",
+          "editable": false,
+          "id": "10f06b07-33c2-478d-80d7-8f1e85671c1e",
+          "input": false,
+          "inputPort": false,
+          "name": "out_log",
+          "output": true,
+          "outputPort": "3ca9d337-e5ba-4ad4-b52f-4d36ec7d9cb9",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        }
+      ],
+      "position": [
+        835.1875,
+        671.96875
+      ],
+      "code": [
+        {
+          "language": "Nipype",
+          "comment": "Wraps the executable command ``flirt``.",
+          "argument": {
+            "name": "fsl.FLIRT()",
+            "import": "import nipype.interfaces.fsl as fsl"
+          }
+        },
+        {
+          "language": "Docker",
+          "argument": {
+            "name": "fsl"
+          }
+        }
+      ],
+      "web_url": "https://nipype.readthedocs.io/en/latest/interfaces/generated/interfaces.fsl/preprocess.html#flirt",
+      "colour": "#fe3948"
+    }
+  ],
   "version": "v1"
 }

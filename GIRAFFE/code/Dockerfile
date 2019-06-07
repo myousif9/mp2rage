@@ -33,6 +33,134 @@ RUN export ND_ENTRYPOINT="/neurodocker/startup.sh" \
 
 ENTRYPOINT ["/neurodocker/startup.sh"]
 
+#-----------------------------------------------------------
+# Install FSL v5.0.10
+# FSL is non-free. If you are considering commerical use
+# of this Docker image, please consult the relevant license:
+# https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Licence
+#-----------------------------------------------------------
+RUN echo "Downloading FSL ..." \
+    && curl -sSL https://fsl.fmrib.ox.ac.uk/fsldownloads/fsl-5.0.10-centos6_64.tar.gz \
+    | tar zx -C /opt \
+    && /bin/bash /opt/fsl/etc/fslconf/fslpython_install.sh -q -f /opt/fsl \
+    && sed -i '$iecho Some packages in this Docker container are non-free' $ND_ENTRYPOINT \
+    && sed -i '$iecho If you are considering commercial use of this container, please consult the relevant license:' $ND_ENTRYPOINT \
+    && sed -i '$iecho https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Licence' $ND_ENTRYPOINT \
+    && sed -i '$isource $FSLDIR/etc/fslconf/fsl.sh' $ND_ENTRYPOINT
+ENV FSLDIR=/opt/fsl \
+    PATH=/opt/fsl/bin:$PATH
+
+
+RUN git clone https://github.com/DimuthuHemachandra/dwi_preproc
+
+#--------------------
+# Install MATLAB runtime
+#--------------------
+
+ENV FORCE_SPMMCR="1" \
+    LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu:/opt/matlabmcr-2010a/v713/runtime/glnxa64:/opt/matlabmcr-2010a/v713/bin/glnxa64:/opt/matlabmcr-2010a/v713/sys/os/glnxa64:/opt/matlabmcr-2010a/v713/extern/bin/glnxa64" \
+    MATLABCMD="/opt/matlabmcr-2010a/v713/toolbox/matlab"
+RUN apt-get update -qq \
+    && apt-get install -y -q --no-install-recommends \
+           bc \
+           libncurses5 \
+           libxext6 \
+           libxmu6 \
+           libxpm-dev \
+           libxt6 \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+    && echo "Downloading MATLAB Compiler Runtime ..." \
+    && curl -sSL --retry 5 -o /tmp/toinstall.deb http://mirrors.kernel.org/debian/pool/main/libx/libxp/libxp6_1.0.2-2_amd64.deb \
+    && dpkg -i /tmp/toinstall.deb \
+    && rm /tmp/toinstall.deb \
+    && apt-get install -f \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+    && curl -fsSL --retry 5 -o /tmp/MCRInstaller.bin https://dl.dropbox.com/s/zz6me0c3v4yq5fd/MCR_R2010a_glnxa64_installer.bin \
+    && chmod +x /tmp/MCRInstaller.bin \
+    && /tmp/MCRInstaller.bin -silent -P installLocation="/opt/matlabmcr-2010a" \
+    && rm -rf /tmp/* \
+    && echo "Downloading standalone SPM ..." \
+    && curl -fsSL --retry 5 -o /tmp/spm12.zip http://www.fil.ion.ucl.ac.uk/spm/download/restricted/utopia/previous/spm12_r7219_R2010a.zip \
+    && unzip -q /tmp/spm12.zip -d /tmp \
+    && mkdir -p /opt/spm12-r7219 \
+    && mv /tmp/spm12/* /opt/spm12-r7219/ \
+    && chmod -R 777 /opt/spm12-r7219 \
+    && rm -rf /tmp/* \
+    && /opt/spm12-r7219/run_spm12.sh /opt/matlabmcr-2010a/v713 quit \
+    && sed -i '$iexport SPMMCRCMD=\"/opt/spm12-r7219/run_spm12.sh /opt/matlabmcr-2010a/v713 script\"' $ND_ENTRYPOINT
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  
+    
+
+<title>GiraffeTools</title>
+
+<meta charset="UTF-8" />
+<meta name="theme-color" content="#FFFFFF" />
+<meta name="msapplication-TileColor" content="#DA532c"/>
+<script src="/cdn-cgi/apps/head/te-KrPT4N4uVrv29ZCeF7jf2xFk.js"></script><link rel="icon" href="/static/favicon/favicon.0e03b5a09b90.ico" type="image/x-icon"/>
+
+<!-- Still an issue with these links -->
+<!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"> -->
+<!-- <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"> -->
+<!-- <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"> -->
+<!-- <link rel="manifest" href="/site.webmanifest"> -->
+
+
+<!-- Font Awesome css only: -->
+<link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+  integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+  crossorigin="anonymous"
+/>
+
+<!-- Bootstrap css only: -->
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+  crossorigin="anonymous"
+/>
+
+  
+  <link type="text/css" href="/static/webpack_bundles/porcupine.2cc138a448e3.css" rel="stylesheet" />
+
+</head>
+
+<body class=index>
+  
+  <div id="porcupine" />
+
+</body>
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116460525-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-116460525-2');
+</script>
+
+
+
+
+  
+
+  <script type="text/javascript" src="/static/webpack_bundles/porcupine-06c44f763f828f92f6bf.d5a79f3d9e5a.js" ></script>
+
+
+</html>
 
 #--------------------------------
 # Add custom analysis file as CMD
