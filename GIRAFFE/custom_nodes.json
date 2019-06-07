@@ -12,7 +12,39 @@
           "code": [
             {
             }
-          ]
+          ],
+          "ports": [
+            {
+                  "input": true,
+                  "output": false,
+                  "visible": true,
+                  "editable": true,
+                  "name": "in_file",
+                  "code": [
+                    {
+                      "language": "Nipype",
+                      "argument": {
+                        "name": "in_file"
+                      }
+                    }
+                  ]
+                },
+            {
+                  "input": false,
+                  "output": true,
+                  "visible": true,
+                  "editable": true,
+                  "name": "out_file",
+                  "code": [
+                    {
+                      "language": "Nipype",
+                      "argument": {
+                        "name": "out_file"
+                      }
+                    }
+                  ]
+                }
+            ]
         }
       ]
     }
