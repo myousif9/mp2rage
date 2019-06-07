@@ -1,0 +1,20 @@
+{
+  "toolboxes": [
+    {
+      "name": "Nipype",
+      "nodes": [
+        {
+          "toolbox": "Nipype",
+          "category": [
+            "Nipype"
+          ],
+          "name": "unring",
+          "code": [
+            {
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
