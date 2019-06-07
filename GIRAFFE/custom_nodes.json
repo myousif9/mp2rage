@@ -9,39 +9,54 @@
             "Nipype"
           ],
           "name": "unring",
-          "code": [{"language":"Nipype","comment":"Wraps unring function.","argument":{"name":"custom_nodes.Unring()","import":"import .customs as custom_nodes"}}],
+          "code": [
+            {
+              "language": "Nipype",
+              "comment": "Wraps unring function.",
+              "argument": {
+                "name": "custom_nodes.Unring()",
+                "import": "import .dwi_preproc.custom_functions as custom_nodes"
+              }
+            },
+            {
+              "language": "Docker",
+              "argument": {
+                "snippet": "https://raw.githubusercontent.com/DimuthuHemachandra/dwi_preproc/master/docker/snippet.txt"
+              }
+            }
+          ],
           "ports": [
             {
-                  "input": true,
-                  "output": false,
-                  "visible": true,
-                  "editable": true,
-                  "name": "in_file",
-                  "code": [
-                    {
-                      "language": "Nipype",
-                      "argument": {
-                        "name": "in_file"
-                      }
-                    }
-                  ]
-                },
-            {
-                  "input": false,
-                  "output": true,
-                  "visible": true,
-                  "editable": true,
-                  "name": "out_file",
-                  "code": [
-                    {
-                      "language": "Nipype",
-                      "argument": {
-                        "name": "out_file"
-                      }
-                    }
-                  ]
+              "input": true,
+              "output": false,
+              "visible": true,
+              "editable": true,
+              "name": "in_file",
+              "code": [
+                {
+                  "language": "Nipype",
+                  "argument": {
+                    "name": "in_file"
+                  }
                 }
-            ]
+              ]
+            },
+            {
+              "input": false,
+              "output": true,
+              "visible": true,
+              "editable": true,
+              "name": "out_file",
+              "code": [
+                {
+                  "language": "Nipype",
+                  "argument": {
+                    "name": "out_file"
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
     }
