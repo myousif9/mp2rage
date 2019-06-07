@@ -7,12 +7,17 @@ class get_unring_InputSpec(BaseInterfaceInputSpec):
 
 
 class get_unring_OutputSpec(TraitedSpec):
-    in_file = File(desc="file")
+    out_file = File(desc="file")
 
 
-class unring(BaseInterface):
+class Unring(BaseInterface):
     input_spec = get_unring_InputSpec
     output_spec = get_unring_OutputSpec
 
     def _run_interface(self, runtime):
         # implement unringing
+
+    def _list_outputs(self):
+        outputs = self._outputs().get()
+        outputs["out_file"] = self.out_file
+        return outputs

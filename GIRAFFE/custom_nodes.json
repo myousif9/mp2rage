@@ -9,10 +9,7 @@
             "Nipype"
           ],
           "name": "unring",
-          "code": [
-            {
-            }
-          ],
+          "code": [{"language":"Nipype","comment":"Wraps unring function.","argument":{"name":"custom_nodes.Unring()","import":"import .customs as custom_nodes"}}],
           "ports": [
             {
                   "input": true,
