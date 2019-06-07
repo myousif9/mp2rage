@@ -33,6 +33,12 @@ analysisflow.connect(dwidenoise, "out_file", unring, "in_file")
 analysisflow.connect(fslval, "out_file", fsl_Eddy, "in_index")
 analysisflow.connect(unring, "out_file", fsl_Eddy, "in_file")
 analysisflow.connect(fsl_Eddy, "out_corrected", fsl_FLIRT, "in_file")
+analysisflow.connect(io_SelectFiles, "T1", fsl_FLIRT, "reference")
+analysisflow.connect(io_SelectFiles, "acqp", fsl_Eddy, "in_acqp")
+analysisflow.connect(io_SelectFiles, "bval", fsl_Eddy, "in_bval")
+analysisflow.connect(io_SelectFiles, "bvec", fsl_Eddy, "in_bvec")
+analysisflow.connect(io_SelectFiles, "mask", fsl_Eddy, "in_mask")
+analysisflow.connect(io_SelectFiles, "DWI", dwidenoise, "in_file")
 
 #Run the workflow
 plugin = 'MultiProc' #adjust your desired plugin here
